@@ -25,7 +25,6 @@ public class MyViewGroup2 extends ViewGroup {
     private Scroller mScroller;//弹性滑动对象，用于实现View的弹性滑动
     private VelocityTracker velocityTracker;//速度追踪，
     private float minFlingVelocity = 100;
-    private int mTouchSlop;
     private int maxFlingVelocity;
 
     public MyViewGroup2(Context context) {
@@ -48,11 +47,8 @@ public class MyViewGroup2 extends ViewGroup {
 
         // 第一步，创建Scroller的实例
         mScroller = new Scroller(context);
-        ViewConfiguration configuration = ViewConfiguration.get(context);
-        // 获取TouchSlop值
-        mTouchSlop = ViewConfigurationCompat.getScaledPagingTouchSlop(configuration);
         //此次计算速度你想要的最大值
-        maxFlingVelocity = ViewConfiguration.get(context).getMaximumFlingVelocity();
+        maxFlingVelocity =ViewConfiguration.getMaximumFlingVelocity();
     }
 
     @Override
