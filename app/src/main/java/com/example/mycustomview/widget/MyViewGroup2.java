@@ -16,6 +16,10 @@ import android.widget.Scroller;
 import com.example.mycustomview.BuildConfig;
 import com.example.mycustomview.R;
 
+/**
+ * 支持margin和gravity
+ * https://my.oschina.net/fengheju/blog/196266
+ */
 public class MyViewGroup2 extends ViewGroup {
     private final Context context;
     private int desireWidth;
@@ -37,7 +41,7 @@ public class MyViewGroup2 extends ViewGroup {
 
     public MyViewGroup2(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        this.context=context;
+        this.context = context;
         init();
     }
 
@@ -45,7 +49,7 @@ public class MyViewGroup2 extends ViewGroup {
         mScroller = new Scroller(getContext());
         velocityTracker = VelocityTracker.obtain();
         //计算速度你想要的最大值
-        maxFlingVelocity =ViewConfiguration.getMaximumFlingVelocity();
+        maxFlingVelocity = ViewConfiguration.getMaximumFlingVelocity();
     }
 
     @Override
