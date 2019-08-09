@@ -44,10 +44,7 @@ public class MyViewGroup2 extends ViewGroup {
     private void init() {
         mScroller = new Scroller(getContext());
         velocityTracker = VelocityTracker.obtain();
-
-        // 第一步，创建Scroller的实例
-        mScroller = new Scroller(context);
-        //此次计算速度你想要的最大值
+        //计算速度你想要的最大值
         maxFlingVelocity =ViewConfiguration.getMaximumFlingVelocity();
     }
 
