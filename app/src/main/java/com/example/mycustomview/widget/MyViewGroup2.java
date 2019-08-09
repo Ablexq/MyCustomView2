@@ -2,12 +2,14 @@ package com.example.mycustomview.widget;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.support.v4.view.ViewConfigurationCompat;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.VelocityTracker;
 import android.view.View;
+import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 import android.widget.Scroller;
 
@@ -15,6 +17,7 @@ import com.example.mycustomview.BuildConfig;
 import com.example.mycustomview.R;
 
 public class MyViewGroup2 extends ViewGroup {
+    private final Context context;
     private int desireWidth;
     private int desireHeight;
     private float x;
@@ -22,7 +25,8 @@ public class MyViewGroup2 extends ViewGroup {
     private Scroller mScroller;//弹性滑动对象，用于实现View的弹性滑动
     private VelocityTracker velocityTracker;//速度追踪，
     private float minFlingVelocity = 100;
-    private float maxFlingVelocity = 1000;
+    private int mTouchSlop;
+    private int maxFlingVelocity;
 
     public MyViewGroup2(Context context) {
         this(context, null);
@@ -34,12 +38,21 @@ public class MyViewGroup2 extends ViewGroup {
 
     public MyViewGroup2(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        this.context=context;
         init();
     }
 
     private void init() {
         mScroller = new Scroller(getContext());
         velocityTracker = VelocityTracker.obtain();
+
+        // 第一步，创建Scroller的实例
+        mScroller = new Scroller(context);
+        ViewConfiguration configuration = ViewConfiguration.get(context);
+        // 获取TouchSlop值
+        mTouchSlop = ViewConfigurationCompat.getScaledPagingTouchSlop(configuration);
+        //此次计算速度你想要的最大值
+        maxFlingVelocity = ViewConfiguration.get(context).getMaximumFlingVelocity();
     }
 
     @Override
