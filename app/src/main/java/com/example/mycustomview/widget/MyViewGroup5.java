@@ -11,6 +11,7 @@ import android.view.WindowManager;
 import android.widget.Scroller;
 
 /**
+ * Scroller + GestureDetector
  * 自定义viewgroup（5）--可滚动布局，GestureDetector手势监听
  * https://blog.csdn.net/qq_18148011/article/details/53761587
  */

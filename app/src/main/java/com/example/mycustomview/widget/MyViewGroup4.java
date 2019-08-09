@@ -12,6 +12,7 @@ import android.view.WindowManager;
 import android.widget.Scroller;
 
 /**
+ * Scroller + onTouchEvent
  * 自定义ViewGroup 快速滑动 支持margin
  * https://blog.csdn.net/qq_18148011/article/details/53761576
  */
