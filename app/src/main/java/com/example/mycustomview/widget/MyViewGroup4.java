@@ -152,6 +152,21 @@ public class MyViewGroup4 extends ViewGroup {
         return new MarginLayoutParams(getContext(), attrs);
     }
 
+    @Override
+    protected LayoutParams generateLayoutParams(LayoutParams p) {
+        return new MarginLayoutParams(p);
+    }
+
+    @Override
+    protected LayoutParams generateDefaultLayoutParams() {
+        return new MarginLayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
+    }
+
+    @Override
+    protected boolean checkLayoutParams(LayoutParams p) {
+        return p instanceof MarginLayoutParams;
+    }
+
     /*
      * 滚动时需要重写的方法，用于控制滚动
      * */
