@@ -5,6 +5,78 @@
     android:orientation="vertical">
 
     <com.example.mycustomview.widget.MyViewGroup6
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#000000"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <com.example.mycustomview.widget.MyImageView
+            android:id="@+id/child1"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorAccent" />
+
+        <com.example.mycustomview.widget.MyImageView
+            android:id="@+id/child2"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary" />
+
+        <com.example.mycustomview.widget.MyImageView
+            android:id="@+id/child3"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/holo_blue_dark" />
+    </com.example.mycustomview.widget.MyViewGroup6>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="scrollTo 右对齐" />
+
+        <Button
+            android:id="@+id/btn2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="scrollTo 左对齐" />
+
+        <Button
+            android:id="@+id/btn3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="scrollBy" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="scrollTo 右对齐" />
+
+        <Button
+            android:id="@+id/btn5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="scrollTo 左对齐" />
+
+        <Button
+            android:id="@+id/btn6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="scrollBy" />
+    </LinearLayout>
+
 </LinearLayout>
